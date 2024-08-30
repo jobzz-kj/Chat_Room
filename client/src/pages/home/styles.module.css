@@ -4,14 +4,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: rgb(63, 73, 204);
+    /* background: rgb(63, 73, 204); */
 }
 
 .formContainer {
     width: 400px;
     margin: 0 auto 0 auto;
     padding: 32px;
-    background: lightblue;
+    background: #eeeff2;
     border-radius: 6px;
     display: flex;
     flex-direction: column;
