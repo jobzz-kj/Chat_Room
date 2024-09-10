@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const RoomAndUsers = ({ socket, username, room }) => {
-    const [roomUsers, setRoomUsers] = useState(()=>{
-        return JSON.parse(localStorage.getItem('roomUsers')) || [];
-    });
+    const [roomUsers, setRoomUsers] = useState([]);
 
 
     const navigate = useNavigate();
@@ -13,7 +11,6 @@ const RoomAndUsers = ({ socket, username, room }) => {
     useEffect(() => {
         socket.on('chatroom_users', (data) => {
             setRoomUsers(data);
-            localStorage.setItem('roomUsers', JSON.stringify(data));
         });
 
         return () => socket.off('chatroom_users');
