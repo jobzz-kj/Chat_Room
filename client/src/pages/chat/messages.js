@@ -2,9 +2,7 @@ import styles from './styles.module.css';
 import { useState, useEffect, useRef } from 'react';
 
 const Messages = ({ socket }) => {
-    const [messagesRecieved, setMessagesReceived] = useState(() => {
-        return JSON.parse(localStorage.getItem('messagesRecieved')) || [];
-    });
+    const [messagesRecieved, setMessagesReceived] = useState([]);
     const messagesColumnRef = useRef(null);
 
     // Runs whenever a socket event is recieved from the server
@@ -20,7 +18,6 @@ const Messages = ({ socket }) => {
                 },
             ]);
         });
-        localStorage.setItem('messagesRecieved', JSON.stringify(messagesRecieved))
 
         // Remove event listener on component unmount
         return () => socket.off('receive_message');

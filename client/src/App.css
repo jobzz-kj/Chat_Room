@@ -7,7 +7,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: rgb(203, 203, 212);
+  background: white;
 }
 
 ::-webkit-scrollbar {
@@ -45,8 +45,8 @@ body {
 }
 
 .btn-primary {
-  background: rgb(153, 217, 234);
-  color: rgb(0, 24, 111);
+  background: rgb(0, 24, 111);
+  color: whitesmoke;
 }
 
 .btn-secondary {
